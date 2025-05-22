@@ -1,0 +1,45 @@
+# ??????
+# @author <a href="https://github.com/liyupi">?????</a>
+# @from <a href="https://yupi.icu">????????</a>
+spring:
+  application:
+    name: springboot-init
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  session:
+    timeout: 2592000
+  # todo mysql配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_init
+    username: root
+    password: 1234
+
+  # todo redis配置
+  redis:
+    database: 1
+    host: 192.168.109.131
+    port: 6379
+    timeout: 5000
+    password: 1234
+  servlet:
+    multipart:
+      max-file-size: 10MB
+server:
+  address: 0.0.0.0
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        max-age: 2592000
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: is_delete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
